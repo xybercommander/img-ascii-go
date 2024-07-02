@@ -4,13 +4,14 @@ import (
 	"fmt"
 	"image"
 	_ "image/jpeg"
+	_ "image/png"
 	"math"
 	"os"
 )
 
 func main() {
 
-	file, err := os.Open("bg.jpg")
+	file, err := os.Open("img.jpg")
 	if err != nil {
 		fmt.Println("Error opening image")
 	}
@@ -76,7 +77,7 @@ func main() {
 
 	newMatrix := transpose(verticalImageCharacters)
 
-	
+	// Writing the data into the txt file
 	for i := 0; i < len(newMatrix); i += 2 {
 		r := ""
 		for j := 0; j < len(newMatrix[i]); j++ {
